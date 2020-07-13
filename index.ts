@@ -18,7 +18,7 @@ class CsvAsync {
    */
   static generate(options?: CsvGenerateOptions) {
     return new Promise((resolve, reject) => {
-      const callback = (error, output) =>
+      const callback = (error: Error, output: any) =>
         error
           ? reject(error)
           : resolve(output);
@@ -36,7 +36,7 @@ class CsvAsync {
    */
   static parse<T = any>(input: string, options?: CsvParseOptions): Promise<T[]> {
     return new Promise((resolve, reject) => {
-      const callback = (error, output) =>
+      const callback = (error: Error, output: any) =>
         error
           ? reject(error)
           : resolve(output);
@@ -55,7 +55,7 @@ class CsvAsync {
    */
   static transform(data, handler, options?: Record<string, any>) {
     return new Promise((resolve, reject) => {
-      const callback = (error, output) =>
+      const callback = (error: Error, output: any) =>
         error
           ? reject(error)
           : resolve(output);
@@ -73,7 +73,7 @@ class CsvAsync {
    */
   static stringify(data: (string|number|null|undefined)[][], options?: CsvStringifyOptions): Promise<string> {
     return new Promise((resolve, reject) => {
-      const callback = (error, output) =>
+      const callback = (error: Error, output: any) =>
         error
           ? reject(error)
           : resolve(output);
